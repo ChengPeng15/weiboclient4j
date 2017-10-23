@@ -60,6 +60,13 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.jacoco</groupId>
+		    <artifactId>jacoco-maven-plugin</artifactId>
+		    <version>0.7.9</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -142,6 +149,21 @@
 					<configLocation>${project.basedir}/conf/checkstyle.xml</configLocation>
 				</configuration>
 			</plugin>
+			
+            		<plugin>
+               			 <groupId>org.jacoco</groupId>
+                		 <artifactId>jacoco-maven-plugin</artifactId>
+                                 <version>0.7.9</version>
+				 <executions>
+				    <execution>
+					<goals>
+					    <goal>prepare-agent</goal>
+					    <goal>report</goal>
+					</goals>
+				    </execution>
+				 </executions>
+            		</plugin>	
+			
 		</plugins>
 	</build>
 
